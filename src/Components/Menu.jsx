@@ -43,16 +43,20 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 5%;
+    padding: 0;
+    margin: 0;
     justify-content: flex-start;
     width: 100%;
 
     li {
       list-style: none;
-      margin: 5%;
+      margin: 0;
       width: 100%;
       display: flex;
       align-items: start;
+      &:hover {
+        background-color: #71749d;
+      }
     }
   }
 
@@ -63,19 +67,17 @@ const Container = styled.div`
 `;
 
 const HyperLink = styled(Link)`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: 16px;
   text-decoration: none;
-  padding-left: 5px;
+  padding-left: 5%;
   color: #000;
   font-weight: 600;
   font-size: 16px;
-  &:hover {
-    color: black;
-  }
 
   p {
     padding-left: 3%;
