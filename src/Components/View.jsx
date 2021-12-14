@@ -1,12 +1,45 @@
 import React from "react";
 import styled from "styled-components";
-import { Route } from "react-router-dom";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+import Table from "./Table";
 
-export const View = ({ data }) => {
-  return <Container>{data}</Container>;
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+const columns = [
+  {
+    Header: "Nombre",
+    accessor: "name",
+  },
+  {
+    Header: "Categoría",
+    accessor: "categoria",
+  },
+  {
+    Header: "Descripción",
+    accessor: "descripcion",
+  },
+];
+
+export const View = ({ data, table }) => {
+  if (table) {
+    return (
+      <Container>
+        <Table dataColumns={columns} dataRows={data ? [...data] : []} />
+      </Container>
+    );
+  } else {
+    return (
+      <Container>
+        <ChartContainer>
+          <Pie data={data} />
+        </ChartContainer>
+      </Container>
+    );
+  }
 };
 
-export default View
+export default View;
 
 const Container = styled.div`
   display: flex;
@@ -17,4 +50,12 @@ const Container = styled.div`
   width: 95%;
   height: 70%;
   background-color: #ccc;
+`;
+
+const ChartContainer = styled.div`
+  width: 30%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

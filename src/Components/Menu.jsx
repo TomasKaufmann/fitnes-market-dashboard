@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../static/logo.png";
-import axios from "axios";
 import { BsBoxSeam } from "react-icons/bs";
 import { HiOutlineUsers } from "react-icons/hi";
 export default function Menu() {
