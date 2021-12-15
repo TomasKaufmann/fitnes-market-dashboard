@@ -21,11 +21,17 @@ const columns = [
   },
 ];
 
-export const ViewProducts = ({ data, table }) => {
+export const ViewProducts = ({ data, table, single }) => {
   if (table) {
     return (
       <Container>
         <Table dataColumns={columns} dataRows={data ? [...data] : []} />
+      </Container>
+    );
+  } else if (single) {
+    return (
+      <Container>
+        <p>{data.product_name}</p>
       </Container>
     );
   } else {
