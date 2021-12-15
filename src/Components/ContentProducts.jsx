@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Nav from "./NavProducts";
 import { Route, Routes, Outlet } from "react-router-dom";
@@ -13,8 +13,10 @@ export const ContentProducts = () => {
     const res = await data.json();
     setProducts(res);
   };
-
-  getData();
+  useEffect(() => {
+    getData();
+  }, [])
+  
 
   return (
     <Container>

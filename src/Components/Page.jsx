@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 import { Routes, Route } from "react-router-dom";
 import { ContentProducts } from "./ContentProducts";
@@ -46,7 +46,12 @@ export default function Page() {
     setProducts(res);
   };
 
-  getProducts();
+  useEffect(() => {
+    getProducts();
+    getUsers();
+    console.log("execute");
+  }, [])
+ 
 
   
 
@@ -58,8 +63,7 @@ export default function Page() {
     setUsers(res);
   };
 
-  getUsers();
-
+  
   return (
     <StyledDiv>
       <Menu />

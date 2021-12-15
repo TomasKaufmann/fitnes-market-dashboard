@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Tile from "./Tile";
@@ -14,7 +14,12 @@ export default function NavProducts() {
   
   };
 
-  getProducts();
+  useEffect(() => {
+    getProducts();
+    console.log(products.ultimo_producto.product_name);
+  }, [])
+  
+ 
 
   return (
     <Container>
@@ -27,7 +32,7 @@ export default function NavProducts() {
       <StyledLink to={"/products/last-created"}>
         <Tile
           title="Último Producto"
-          data={""}
+          data={products.ultimo_producto.product_name}
         />
       </StyledLink>
       <StyledLink to={"/products/list"}>
