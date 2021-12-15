@@ -31,7 +31,18 @@ export const ViewProducts = ({ data, table, single }) => {
   } else if (single) {
     return (
       <Container>
+        <FormContainer>
+        <label>Nombre del Producto</label>
         <p>{data.product_name}</p>
+        <label>Descripcion</label>
+        <p>{data.description}</p>
+        <label>Precio</label>
+        <p>{data.price}</p>
+        <label>Marca</label>
+        <p>{data.brand_name}</p>
+        <label>Categoria</label>
+        <p>{data.categories.name}</p>
+        </FormContainer>
       </Container>
     );
   } else {
@@ -65,3 +76,14 @@ const ChartContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+const FormContainer = styled.div`
+  label {
+
+  }
+
+  p {
+
+  }
+
+`

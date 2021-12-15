@@ -7,12 +7,12 @@ import styled from "styled-components";
 import ViewProducts from "./ViewProducts";
 import ViewUsers from "./ViewUsers";
 
-const chartData = {
+export const chartData = {
   labels: ["Musculacion", "Indumentaria", "Suplementos", "Equipamiento"],
   datasets: [
     {
       label: "# of Votes",
-      data: [1, 2, 3, 4],
+      data: [1,5,6,8],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
         "rgba(54, 162, 235, 0.2)",
@@ -34,8 +34,11 @@ const chartData = {
   ],
 };
 
+
+
 export default function Page() {
-  const [products, setProducts] = useState("");
+
+  const [products, setProducts] = useState({a: false, b: false});
 
   const getProducts = async () => {
     const data = await fetch("http://localhost:3050/api/products/");
@@ -45,26 +48,9 @@ export default function Page() {
 
   getProducts();
 
-  const displayCategorias = async (products) => {
-    console.log(products);
+  
 
-    debugger;
-
-    let values = [];
-    const musculacion = await products.categorias.musculacion;
-    const indumentaria = await products.categorias.indumentaria;
-    const suplementos = await products.categorias.suplementos;
-    const equipamiento = await products.categorias.equipamiento;
-
-    values.push(musculacion);
-    values.push(indumentaria);
-    values.push(suplementos);
-    values.push(equipamiento);
-
-    return values;
-  };
-
-  const [users, setUsers] = useState("");
+  const [users, setUsers] = useState({a: false, b: false});
 
   const getUsers = async () => {
     const data = await fetch("http://localhost:3050/api/users/");
