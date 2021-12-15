@@ -5,34 +5,30 @@ import Tile from "./Tile";
 
 export default function NavProducts() {
 
-  const [products, setProducts] = useState("")
+  const [products, setProducts] = useState({a: false, b: false})
 
   const getProducts = async () => {
     const data = await fetch("http://localhost:3050/api/products/");
     const res = await data.json();
     setProducts(res);
-  
   };
 
   useEffect(() => {
     getProducts();
-    console.log(products.ultimo_producto.product_name);
   }, [])
   
- 
+
+  console.log(products);
 
   return (
     <Container>
       <StyledLink to={"/products/total"}>
         <Tile title="Total Productos" data={String(products.total)} />
       </StyledLink>
-      <StyledLink to={"/products/categories"}>
-        <Tile title="Total Categorias" data="4" />
-      </StyledLink>
       <StyledLink to={"/products/last-created"}>
         <Tile
           title="Último Producto"
-          data={products.ultimo_producto.product_name}
+          data={""}
         />
       </StyledLink>
       <StyledLink to={"/products/list"}>
