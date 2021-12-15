@@ -12,16 +12,16 @@ const columns = [
     accessor: "name",
   },
   {
-    Header: "Categoría",
-    accessor: "categoria",
+    Header: "E-mail",
+    accessor: "email",
   },
   {
-    Header: "Descripción",
-    accessor: "descripcion",
+    Header: "Imagen",
+    accessor: "Detalle.user_image",
   },
 ];
 
-export const View = ({ data, table }) => {
+export const ViewUsers = ({ data, table }) => {
   if (table) {
     return (
       <Container>
@@ -39,7 +39,7 @@ export const View = ({ data, table }) => {
   }
 };
 
-export default View;
+export default ViewUsers;
 
 const Container = styled.div`
   display: flex;

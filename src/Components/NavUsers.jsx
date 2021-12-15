@@ -1,24 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Tile from "./Tile";
 
-export default function Nav(data) {
-  const [lastProduct, setLastProduct] = useState("");
+export default function NavUsers(data) {
+  console.log(data);
   
   return (
     <Container>
-      <StyledLink to={"/products/total"}>
-        <Tile title="Total Productos" data={String(data.data.total)} />
-      </StyledLink>
-      <StyledLink to={"/products/categories"}>
-        <Tile title="Total Categorias" data="4" />
-      </StyledLink>
-      <StyledLink to={"/products/last-created"}>
-        <Tile title="Último Producto" data={data.data[-1]} />
-      </StyledLink>
-      <StyledLink to={"/products/list"}>
-        <Tile title="Listado Productos" data="Count" />
+      <StyledLink to={"/users/list"}>
+        <Tile title="Listado Usuarios" data="" />
       </StyledLink>
     </Container>
   );

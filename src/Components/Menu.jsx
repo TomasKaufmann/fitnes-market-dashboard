@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../static/logo.png";
 import { BsBoxSeam } from "react-icons/bs";
 import { HiOutlineUsers } from "react-icons/hi";
+import { ContentProducts } from "./ContentProducts";
+import { ContentUsers } from "./ContentUsers";
 export default function Menu() {
   return (
     <Container>
